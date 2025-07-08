@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Te Tanis Amo ❤️</title>
+  <title>Te Amo ❤️</title>
   <style>
     html, body {
       margin: 0;
@@ -34,15 +34,15 @@
     }
 
     .center-message {
-  font-family: 'Courier New', monospace;
-  color: #ff69b4;
-  font-size: 4vw; /* tamaño más pequeño */
-  text-align: center;
-  opacity: 0.85;
-  text-shadow: 0 0 2px #ff69b4, 0 0 4px #ff1493;
-  animation: aparecer 3s ease-in-out;
-  text-transform: uppercase; /* texto en mayúsculas */
-}
+      font-family: 'Courier New', monospace;
+      color: #ff69b4;
+      font-size: 4vw; /* tamaño más pequeño */
+      text-align: center;
+      opacity: 0.85;
+      text-shadow: 0 0 2px #ff69b4, 0 0 4px #ff1493;
+      animation: aparecer 3s ease-in-out;
+      text-transform: uppercase; /* texto en mayúsculas */
+    }
 
     @keyframes aparecer {
       from { opacity: 0; transform: scale(0.95); }
@@ -130,12 +130,11 @@
     ctx.globalAlpha = 1;
   }
 
-  // 🎇 Explosiones con frase "te amoo"
+  // 🎇 Explosiones con corazones (antes era texto)
   const fireworks = [];
-  const fireworkText = "te amoo";
 
   function createExplosion(x = null, y = null) {
-    const count = fireworkText.length;
+    const count = 30 + Math.floor(Math.random() * 30);
     x = x ?? Math.random() * width;
     y = y ?? Math.random() * height / 2;
     for (let i = 0; i < count; i++) {
@@ -147,7 +146,7 @@
         dy: Math.sin(angle) * speed,
         alpha: 1,
         color: colors[Math.floor(Math.random() * colors.length)],
-        text: fireworkText[i],
+        text: "❤",
         size: 30 + Math.random() * 20
       });
     }
